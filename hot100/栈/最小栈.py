@@ -46,10 +46,10 @@ class MinStack:
             return
 
         ## 更新curmin
-        ### pop出去了最小值
-        ### 上一个最小值是更小的
+        ### pop出去的是当前最小值
         if pop_ele < 0:
             self.curmin = self.curmin - pop_ele
+        ### pop出去的不是最小值
         else:
             self.curmin = self.curmin
 
