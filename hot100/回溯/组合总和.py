@@ -1,6 +1,6 @@
 from typing import List
 
-#用一个字典，不进行状态的回溯
+#用一个字典，不能进行状态的回溯，因为没有保存上一个状态
 #status = dict()
 #  for num in candidates:
 #     status[num] = 0
