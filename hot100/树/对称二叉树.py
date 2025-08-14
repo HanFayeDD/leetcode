@@ -11,7 +11,7 @@ class TreeNode:
 ## TODO左右指针反方向移动判断
 
 
-## TODO:能否等价为中序遍历
+## 能否等价为中序遍历
 ## [1,2,2,2,null,2]
 ## 输出为[None, 2, None, 2, None, 1, None, 2, None, 2, None] true
 ## 期待为false
