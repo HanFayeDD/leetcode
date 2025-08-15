@@ -10,4 +10,6 @@
 - 溢出限制
 - 双层循环卡哪层
 - 特例空树
-- collection与queue的区别
+- collection与queue的区别 
+- 类记得写self
+- 
