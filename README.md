@@ -12,4 +12,4 @@
 - 特例空树
 - collection与queue的区别 
 - 类记得写self
-- 
+- range()范围注意+1
