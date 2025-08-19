@@ -13,3 +13,6 @@
 - collection与queue的区别 
 - 类记得写self
 - range()范围注意+1
+- 字典中的键与set中元素的可变性
+- vals == vals[::-1]
+- 进位处理
