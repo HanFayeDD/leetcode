@@ -1,6 +1,6 @@
 from typing import List
 
-
+## 判断是否找到的条件有所变化
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         def isleftbound(idx):
