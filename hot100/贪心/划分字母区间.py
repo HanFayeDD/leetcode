@@ -38,7 +38,26 @@ class Solution1:
         
 class Solution:
     def partitionLabels(self, s: str) -> List[int]:
-        pass
+        lastd = dict()
+        for idx, ele in enumerate(s):
+            lastd[ele] = idx 
+            
+        left, right = 0, 0
+        res = []
+        for idx, ele in enumerate(s):
+            if lastd[ele] > right:
+                right = lastd[ele]
+            
+            if idx == right:
+                res.append(right - left + 1)
+                left = right + 1
+                right = left
+                    
+        return res 
+            
+        
+        
+        
         
 if __name__ == "__main__":
     print(Solution().partitionLabels("ababcbacaf"))
