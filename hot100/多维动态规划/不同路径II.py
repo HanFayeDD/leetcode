@@ -7,6 +7,9 @@ class Solution:
         
         dp = [[0] * (n+1) for _ in range(m+1)]
         
+        if obstacleGrid[0][0] == 1:
+            return 0
+
         dp[1][1] = 1
         
         for i in range(1, m+1):
