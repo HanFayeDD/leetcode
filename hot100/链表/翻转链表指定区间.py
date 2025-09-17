@@ -22,6 +22,8 @@ def reverslink(first:Node, begin:int, end:int):
         tmp.next = p1.next
         p1.next = tmp
         
+    return head.next
+        
         
 def show(head:Node):
     now = head 
@@ -44,9 +46,9 @@ if __name__=="__main__":
     p4.next = p5 
     p5.next = p6
     show(p1)
-    reverslink(p1, 2, 100)
+    res = reverslink(p1, 1, 100)
     
-    show(p1)
+    show(res)
     
             
     
