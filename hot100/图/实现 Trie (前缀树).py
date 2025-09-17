@@ -27,6 +27,7 @@ class Trie:
             if idx == len(word)-1:
                 return nowd[s][0]
             nowd = nowd[s][1]
+        return False
             
 
     def startsWith(self, prefix: str) -> bool:
@@ -44,6 +45,6 @@ if __name__ == "__main__":
     t.insert("aaaa")
     print(t.root)
     
-    print(t.search("aaa"))
+    print(t.search("aaaaaaa"))
     print(t.startsWith("ab"))
     

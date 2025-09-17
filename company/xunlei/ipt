@@ -1,0 +1,9 @@
+"aab","c*a*b"
+true
+
+
+"","a*"
+true
+
+"mississippi","mis*is*p*."
+false
