@@ -1,5 +1,6 @@
 from typing import List
 
+## 多个山峰、只管上升的部分即可。底下连在一起的只用爬一次
 class Solution:
     def minNumberOperations(self, target: List[int]) -> int:
         diff = [target[0]]
