@@ -5,3 +5,7 @@ b = [3,4]
 a[0], a[1], b[0], b[1] = b[0], b[1], a[0], a[1]
 print(a)
 print(b)
+
+a = [[1,2]]
+for k, v in a:
+    print(k, v, sep="#")

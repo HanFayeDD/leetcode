@@ -81,6 +81,7 @@ class Healper():
             heapq.heapify(self.large)
             heapq.heapify(self.small)
         
+## 超时
 class Solution1:
     def findXSum(self, nums: List[int], k: int, x: int) -> List[int]:        
         helper = Healper(x)
