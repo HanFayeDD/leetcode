@@ -1,7 +1,13 @@
 from typing import List, Dict
 import heapq
 
+## 好像可以用并查集
 class Solution:
+    def processQueries(self, c: int, connections: List[List[int]], queries: List[List[int]]) -> List[int]:
+        pass
+
+# pass
+class Solution1:
     def processQueries(self, c: int, connections: List[List[int]], queries: List[List[int]]) -> List[int]:
         route:Dict[int, List] = dict()
         for i in range(1, c+1):
