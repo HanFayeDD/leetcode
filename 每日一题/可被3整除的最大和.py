@@ -29,43 +29,32 @@ class Solutio1:
         return ans
 
 ## no pass
-class Solution2:
+class Solution:
     def maxSumDivThree(self, nums: List[int]) -> int:
         dp = [[0] * len(nums) for _ in range(3)]
         n = len(nums)
         for i in range(n):
-            left = nums[i] % 3
+            num = nums[i]
             if i == 0:
-                dp[0][0] = nums[0] if left == 0 else 0 
-                dp[1][0] = nums[0] if left == 1 else 0
-                dp[2][0] = nums[0] if left == 2 else 0
+                dp[0][i] = num if num % 3 == 0 else 0 
+                dp[1][i] = num if num % 3 == 1 else 0
+                dp[2][i] = num if num % 3 == 2 else 0 
                 continue
+            
+            ## 至少是上一个dp[j][i-1]的值，先填进来。特别是单调递增的情况，可以先填进来 
+            for j in range(3):
+                dp[j][i] = dp[j][i-1]
+            
+            for j in range(3):
+                newsum = num + dp[j][i-1]
+                idx = newsum % 3 
+                ## 三个数字分分别是：当前的值、新值、上一个旧值
+                dp[idx][i] = max(dp[idx][i], newsum)
         
-            ## 只有当dp[1][i]、dp[2][i]被首次更新后，此规则才起作用
-            if left == 0:
-                dp[0][i] = dp[0][i-1] + nums[i]
-                dp[1][i] = dp[1][i-1] + nums[i] if dp[1][i-1] != 0 else dp[1][i-1]
-                dp[2][1] = dp[2][i-1] + nums[i] if dp[2][i-1] != 0 else dp[2][i-1]
-                
-            elif left == 1:
-
-                dp[0][i] = max(dp[0][i-1], dp[2][i-1] + nums[i]) 
-                dp[1][i] = max(dp[1][i-1], dp[0][i-1] + nums[i]) 
-                dp[2][i] = max(dp[2][i-1], dp[1][i-1] + nums[i])
-           
-                
-            elif left == 2:
-                dp[0][i] = max(dp[0][i-1], dp[1][i-1] + nums[i]) 
-                # （2 + 2） % 3 = 1但是存在着 （0 + 2） % 3 = 2导致更新错误
-                dp[1][i] = max(dp[1][i-1], dp[2][i-1] + nums[i]) 
-                dp[2][i] = max(dp[2][i-1], dp[0][i-1] + nums[i])
-        print(nums)
-        print()
-        print(*dp, sep="\n")
         return dp[0][-1]
     
 ## pass
-class Solution:
+class Solution2:
     def maxSumDivThree(self, nums: List[int]) -> int:
         # dp[0]: 当前能得到的余数为0的最大和
         # dp[1]: 当前能得到的余数为1的最大和
