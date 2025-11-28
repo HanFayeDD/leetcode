@@ -15,6 +15,7 @@ class Solution:
         
         for idx, val in enumerate(sumarr):
             leftidx = idx % k ## 左区间也需要是求余值为leftidx的
+            ## 当长度没有达到k时，这里需要的mins[leftidx]都为无穷大、res为无限小
             res = max(res, val - mins[leftidx])
             mins[leftidx] = min(mins[leftidx], val) ## 左区间的前缀和尽可能小
         
